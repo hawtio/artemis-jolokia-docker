@@ -7,5 +7,6 @@ This docker image is tailored to the OpenShift platform with client certificate 
 To deploy the Artemis container on OpenShift, run the following:
 
 ```sh
-make deploy-openshift
+$ docker pull docker.io/tadayosi/artemis:ssl
+$ make deploy-openshift
 ```
