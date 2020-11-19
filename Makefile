@@ -12,5 +12,5 @@ push:
 
 deploy-openshift:
 	-oc delete deploy/artemis
-	oc create deploy artemis --image=tadayosi/artemis:ssl
+	oc create deploy artemis --image=docker.io/tadayosi/artemis:ssl
 	oc patch deploy artemis -p '{"spec":{"template":{"spec":{"containers":[{"name":"artemis","imagePullPolicy": "Always","ports":[{"containerPort":8161,"name":"console-jolokia","protocol":"TCP"},{"containerPort":8778,"name":"jolokia","protocol":"TCP"},{"containerPort":61616,"name":"artemis","protocol":"TCP"}]}]}}}}'
